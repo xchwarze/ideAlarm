@@ -43,9 +43,9 @@ return {
 }
 ~~~~
 
-(In case you need to trigger the script on the devices that you have defined as trigger devices
+If you need to trigger the script on the devices that you have defined as trigger devices
 you should instead require the ideAlarm module at the very top of your script. Then see
-the Triggering on the Arming Mode change example below.)
+the Triggering on the Arming Mode change example below.
 
 The Alarm Object
 ----------------
@@ -97,11 +97,19 @@ alarm.zones(z)
       local myZone = alarm.zones(1) -- Retrieves the first defined zone
       local myZone = alarm.zones() -- Retrieves the zone defined as the main zone
 
-alarm object constants
+Alarm Object Constants
+----------------------
 
-*alarm.ZS_NORMAL, alarm.ZS_ALERT, alarm.ZS_ERROR alarm.ZS_TRIPPED, alarm.ZS_TIMED_OUT* : Possible alarm zone statuses.
+*alarm.ZS_NORMAL*,
+*alarm.ZS_ALERT*
+*alarm.ZS_ERROR*
+*alarm.ZS_TRIPPED*
+*alarm.ZS_TIMED_OUT*
+  - Possible alarm zone statuses.
 
-*alarm.SENSOR_CLASS_A, alarm.SENSOR_CLASS_B* : Sensor classes.
+*alarm.SENSOR_CLASS_A*
+*alarm.SENSOR_CLASS_B*
+  - Sensor classes.
 
 The Zone Object
 ---------------
