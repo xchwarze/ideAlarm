@@ -83,35 +83,86 @@ Below is an example of an alarm zone. (It's not the complete configuration file)
 },
 ~~~~
 
-name: (Required) Give your alarm zone a descriptive name.
+*name*: (Required)
+  - Give your alarm zone a descriptive name.
 
-armingModeTextDevID: (Required) The Domoticz virtual text device idx that You created for this zone. Holds the zones arming mode.
+*armingModeTextDevID*: (Required)
+  - The Domoticz virtual text device idx that You created for this zone. Holds the zones arming mode.
 
-statusTextDevID: (Required) The Domoticz virtual text device idx that You created for this zone. Holds the zones event status.
+*statusTextDevID*: (Required)
+  - The Domoticz virtual text device idx that You created for this zone. Holds the zones event status.
 
-entryDelay: (Required) Entry delay in seconds. Valid range: 0-999. Default setting: 15.
+*entryDelay*: (Required)
+  - Entry delay in seconds. Valid range: 0-999. Default setting: 15.
 
-exitDelay: (Required) Exit delay in seconds. Valid range: 0-999. Default setting: 60.
+*exitDelay*: (Required)
+  - Exit delay in seconds. Valid range: 0-999. Default setting: 60.
 
-alertDevices: (Elements are Optional) A Lua table containing the named Domoticz devices that shall be automatically switched on during an alert situation. Typically you put your siren devices names here but it can actually be any kind of Domoticz devices that can be switched "On" and "Off". If you have no alert devices or you'd like to control them using custom logic you should supply an empty table {}
+*alertDevices*: (Elements are Optional)
+  - A Lua table containing the named Domoticz devices that shall be automatically switched on during an
+    alert situation. Typically you put your siren devices names here but it can actually be any kind of
+    Domoticz devices that can be switched "On" and "Off". If you have no alert devices or you'd like to
+    control them using custom logic you should supply an empty table {}.
 
-sensors: See [Sensors](#sensors-in-the-configuration-file).
+*sensors*:
+  - See [Sensors](#sensors-in-the-configuration-file).
 
-armAwayToggleBtn: (Required) Switch device to toggle alarm status between Disarmed and Armed away.
-armHomeToggleBtn: (Required) Switch device to toggle alarm status between Disarmed and Armed home.
-mainZone: (Required) Set this to true if this is your main zone. Otherwise set this to false. (The main will be the default zone). You don't need to have a main zone but if you define one, it's important that you define only a single zone as your main zone.
-canArmWithTrippedSensors: (Required) Set this to true if you want to be able to arm this zone even if sensors are tripped when arming. If set to false, arming attempts with tripped sensors won't be possible and will cause an error.
-syncWithDomoSec: (Required) Set this to true if you'd like to synchronize arming mode changes with Domoticz's built in Security Panel. Synchronization is bi-directional. Only a single zone is allowed to sync with Domoticz's built in Security Panel.
+*armAwayToggleBtn*: (Required)
+  - Switch device to toggle alarm status between Disarmed and Armed away.
+
+*armHomeToggleBtn*: (Required)
+  - Switch device to toggle alarm status between Disarmed and Armed home.
+
+*mainZone*: (Required)
+  - Set this to true if this is your main zone. Otherwise set this to false. (The main will be the default zone).
+    You don't need to have a main zone but if you define one, it's important that you define only a single zone
+    as your main zone.
+
+*canArmWithTrippedSensors*: (Required)
+  - Set this to true if you want to be able to arm this zone even if sensors are tripped when arming. If set to
+    false, arming attempts with tripped sensors won't be possible and will cause an error.
+
+*syncWithDomoSec*: (Required)
+  - Set this to true if you'd like to synchronize arming mode changes with Domoticz's built in Security Panel.
+    Synchronization is bi-directional. Only a single zone is allowed to sync with Domoticz's built-in
+    Security Panel.
 
 Sensors in the configuration file
 ---------------------------------
 
-Sensor Name: String. The key value for each defined sensor. This must be the name of a Domoticz device.
-class: String. Must be set to one of SENSOR_CLASS_A or SENSOR_CLASS_B. Sensors defined as SENSOR_CLASS_A will trigger in any of domoticz.SECURITY_ARMED_HOME and domoticz.SECURITY_ARMED_AWAY. Sensors defined as SENSOR_CLASS_B will trigger in domoticz.SECURITY_ARMED_AWAY.
-nag: Boolean. Reserved for future functionality. The idea is to make ideAlarm periodically announce (nag) if a sensor has been left open for a period of time.
-nagTimeoutMins: Integer. The number of minutes after which a sensor will be regarded as timed out and therefore will be nagged about. Nagging will only occur for sensors in disarmed zones and also for SENSOR_CLASS_B sensors when the zone is armed home. Nagging will not occur for disabled sensors. Also, nagging will only occur for sensors that has armWarn set to true.
-armWarn: Boolean. Can be set to false if you wish to exclude the sensor from being checked when arming a zone with tripped sensors. This setting will also affect if the sensor will be nagged about. Default value is true.
-enabled: Boolean or Function. Set to true in normal circumstances. It can be set to false to exclude the sensor from the alarm zone. While false, it won't trigger alarms and armWarning and nagging will not occur. Default value is true. This can alternatively be defined as a function. By using a function you can for example make a sensor enabled only when it's dark or depending on the state of other domoticz devices.
+*Sensor Name*:
+  - String
+  - The key value for each defined sensor. This must be the name of a Domoticz device.
+
+*class*:
+  - String
+  - Must be set to one of SENSOR_CLASS_A or SENSOR_CLASS_B. Sensors defined as SENSOR_CLASS_A will trigger
+    in any of domoticz.SECURITY_ARMED_HOME and domoticz.SECURITY_ARMED_AWAY. Sensors defined as SENSOR_CLASS_B
+    will trigger in domoticz.SECURITY_ARMED_AWAY.
+
+*nag*:
+  - Boolean
+  - Reserved for future functionality. The idea is to make ideAlarm periodically announce (nag) if a sensor
+    has been left open for a period of time.
+
+*nagTimeoutMins*:
+  - Integer
+  - The number of minutes after which a sensor will be regarded as timed out and therefore will be nagged about.
+    Nagging will only occur for sensors in disarmed zones and also for SENSOR_CLASS_B sensors when the zone is
+    armed home. Nagging will not occur for disabled sensors. Also, nagging will only occur for sensors that has
+    *armWarn* set to true.
+
+*armWarn*:
+  - Boolean
+  - Can be set to false if you wish to exclude the sensor from being checked when arming a zone with tripped
+    sensors. This setting will also affect if the sensor will be nagged about. Default value is true.
+
+*enabled*:
+  - Boolean or Function
+  - Set to true in normal circumstances. It can be set to false to exclude the sensor from the alarm zone. When
+    false, it won't trigger alarms and *armWarning*, and nagging will not occur. Default value is true. This can
+    alternatively be defined as a function. By using a function you can, for example, make a sensor enabled only
+    when it's dark or depending on the state of other domoticz devices.
 
 Only a single zone can be synchronized with Domoticz
 ----------------------------------------------------
