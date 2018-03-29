@@ -53,7 +53,7 @@ The Alarm Object
 The alarm object holds all information about ideAlarm. It provides global attributes
 and methods to query and manipulate your ideAlarm system.
 
-+ *alarm.statusAll(domoticz)*
++ **alarm.statusAll(domoticz)**
     + Lists all defined alarm zones and sensors. It includes the arming mode and alarm status for all your defined alarm zones
     + Parameter
         + domoticz: (table) The domoticz object.
