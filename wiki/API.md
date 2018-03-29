@@ -124,8 +124,10 @@ that you can use for the ideAlarm zone object.
 
 zone.alertDevices
     table. The alert devices collection. The Domoticz device names of the devices that shall make you aware about an alert.
+
 zone.armAwayToggleBtn
     string. The Domoticz virtual switch device name of the device that toggles the zone between "Disarmed" and "Armed Away".
+
 zone.armingMode(domoticz)
     Retrieves the zone's arming mode.
     Parameter
@@ -134,10 +136,13 @@ zone.armingMode(domoticz)
         (string) The arming mode. It will be one of domoticz.SECURITY_DISARMED, domoticz.SECURITY_ARMEDHOME or domoticz.SECURITY_ARMEDAWAY
     Usage example
         if (alarm.zones('My Home').armingMode(domoticz) == domoticz.SECURITY_DISARMED) then print('Heureka!') end
+
 zone.armHomeToggleBtn
     string. The Domoticz virtual switch device name of the device that toggles the zone between "Disarmed" and "Armed Home".
+
 zone.armingModeTextDevID
     integer. The Domoticz virtual text device idx of the device that displays the zone's arming mode.
+
 zone.armZone(domoticz, armingMode, delay)
     Use this function to arm a zone
     Parameter
@@ -148,8 +153,10 @@ zone.armZone(domoticz, armingMode, delay)
         (nil)
     Usage example
         alarm.zones('My Home').armZone(domoticz, domoticz.SECURITY_ARMEDAWAY, 20)
+
 zone.canArmWithTrippedSensors
     boolean. Determines whether this zone allows arming even though there are tripped sensors at the moment of arming. Individual sensors can be excluded from this requirement by setting the sensor configuration value armWarn to false.
+
 zone.disarmZone(domoticz)
     Use this function to disarm a zone
     Parameter
@@ -158,10 +165,13 @@ zone.disarmZone(domoticz)
         (nil)
     Usage example
         alarm.zones('My Home').disarmZone(domoticz)
+
 zone.entryDelay
     integer. The zone's entry delay in seconds.
+
 zone.exitDelay
     integer. The zone's exit delay in seconds.
+
 zone.isArmed(domoticz)
     Checks if the whether the zone is armed (in any of the 2 arming modes domoticz.SECURITY_ARMEDHOME and domoticz.SECURITY_ARMEDAWAY)
     Parameter
@@ -170,6 +180,7 @@ zone.isArmed(domoticz)
         (boolean) true if armed. false if disarmed.
     Usage example
         if alarm.zones('My Home').isArmed(domoticz) then domoticz.log('Safe and sound', domoticz.LOG_INFO) end
+
 zone.isArmedAway(domoticz)
     Checks if the whether the zone is armed away (domoticz.SECURITY_ARMEDAWAY)
     Parameter
@@ -178,6 +189,7 @@ zone.isArmedAway(domoticz)
         (boolean) true if Armed Away, otherwise false.
     Usage example
         if alarm.zones('My Home').isArmedAway(domoticz) then domoticz.log('Safe and sound', domoticz.LOG_INFO) end
+
 zone.isArmedHome(domoticz)
     Checks if the whether the zone is armed home (domoticz.SECURITY_ARMEDHOME)
     Parameter
@@ -186,10 +198,13 @@ zone.isArmedHome(domoticz)
         (boolean) true if Armed Home, otherwise false.
     Usage example
         if alarm.zones('My Home').isArmedHome(domoticz) then domoticz.log('Safe and sound', domoticz.LOG_INFO) end
+
 zone.mainZone
     boolean. Determines whether the zone has been defined as the main zone. (E.g default zone)
+
 zone.name
     string. The zone's name.
+
 zone.sensorConfig(sName)
     Looks up and returns the sensor configuration object by given sensor name. Generates an error if a sensor can not be found.
     Parameter
@@ -198,18 +213,23 @@ zone.sensorConfig(sName)
         (table) The sensor configuration table.
     Usage example
         domoticz.log(alarm.zones('My Home').sensorConfig('My Door').nagTimeoutSecs, domoticz.LOG_INFO)
+
 zone.sensors
     table. The zone's sensors.
+
 zone.status(domoticz)
     Retrieves the zone's status.
     Parameter
         domoticz: (table) The domoticz object.
     Return value
         (string) The alarm zone's status. See possible statuses.
+
 zone.statusTextDevID
     integer. The Domoticz virtual text device idx of the device that displays the zone's status.
+
 zone.syncWithDomoSec
     boolean. Determines whether this zone's status shall synchronize with the Domotic's built in security panel.
+
 zone.toggleArmingMode(domoticz, armingMode)
     Use this function to toggle the arming mode between "Disarmed" and the supplied armingMode.
     Parameter
@@ -219,6 +239,7 @@ zone.toggleArmingMode(domoticz, armingMode)
         (nil)
     Usage example
         alarm.zones('My Home').toggleArmingMode(domoticz, domoticz.SECURITY_ARMEDAWAY)
+
 zone.trippedSensors(domoticz, mins, armingMode, isArming)
     Use this function to retrieve a list of tripped sensors for the zone. (E.g. sensors with a state of "Open", "On") Sensors that have been configured as disabled won't be included. Also, this function will respect the sensor classes (alarm.SENSOR_CLASS_A and alarm.SENSOR_CLASS_B), that is the sensor is considered tripped in the context of it's class together with the arming mode.
     Parameter
@@ -249,11 +270,15 @@ Below are the attributes that you can use for the ideAlarm sensor configuration 
 
 sensorConfig.armWarn
     boolean. Determines if the sensor shall be included in the tripped sensors warning while attempting to arm. If set to false, the sensor will also bypass the requirement that all sensors must be untripped before arming a zone when the zone option canArmWithTrippedSensors is disabled
+
 sensorConfig.class
     string. The sensors class. It shall be one of alarm.SENSOR_CLASS_A and alarm.SENSOR_CLASS_B.
+
 sensorConfig.enabled
     boolean. If set to false, ideAlarm will ignore this sensor completely.
+
 sensorConfig.nag
     boolean. Reserved for future functionality.
+
 sensorConfig.nagTimeoutSecs
     integer. Reserved for future functionality.
