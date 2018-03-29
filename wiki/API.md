@@ -106,16 +106,16 @@ and methods to query and manipulate your ideAlarm system.
 Alarm Object Constants
 ----------------------
 
-**alarm.ZS_NORMAL**
-**alarm.ZS_ALERT**
-**alarm.ZS_ERROR**
-**alarm.ZS_TRIPPED**
-**alarm.ZS_TIMED_OUT**
-    + Possible alarm zone statuses
++ Alarm zone statuses
+    + **alarm.ZS_NORMAL**
+    + **alarm.ZS_ALERT**
+    + **alarm.ZS_ERROR**
+    + **alarm.ZS_TRIPPED**
+    + **alarm.ZS_TIMED_OUT**
 
-**alarm.SENSOR_CLASS_A**
-**alarm.SENSOR_CLASS_B**
-    + Sensor classes.
++ Sensor classes
+    + **alarm.SENSOR_CLASS_A**
+    + **alarm.SENSOR_CLASS_B**
 
 The Zone Object
 ---------------
