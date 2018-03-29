@@ -55,7 +55,7 @@ Download the example config file and save the file in your dzVents script folder
 
 Example linux command on a Raspberry Pi logged in as user pi. (Do not use the sudo command):
 
-~~~~
+~~~~ bash
 wget -nc -O ~/domoticz/scripts/dzVents/scripts/ideAlarmConfig.lua https://github.com/xchwarze/ideAlarm/tree/master/examples/ideAlarmConfig.lua
 ~~~~
 
@@ -76,7 +76,7 @@ Download the example helpers file and save the file in your dzVents script folde
 
 Example linux command on a Raspberry Pi logged in as user pi. (Do not use the sudo command):
 
-~~~~
+~~~~ bash
 wget -nc -O ~/domoticz/scripts/dzVents/scripts/ideAlarmHelpers.lua https://github.com/xchwarze/ideAlarm/tree/master/examples/ideAlarmHelpers.lua
 ~~~~
 
@@ -88,7 +88,7 @@ Download The ideAlarm module file and save the file in your dzVents script folde
 
 Example linux command on a Raspberry Pi logged in as user pi. (Do not use the sudo command):
 
-~~~~
+~~~~ bash
 wget -O ~/domoticz/scripts/dzVents/scripts/ideAlarmModule.lua https://github.com/xchwarze/ideAlarm/tree/master/scripts/ideAlarmModule.lua
 ~~~~
 
@@ -100,7 +100,7 @@ Download ideAlarm dzVents script and save the file in your dzVents script folder
 
 Example linux command on a Raspberry Pi logged in as user pi. (Do not use the sudo command):
 
-~~~~
+~~~~ bash
 wget -O ~/domoticz/scripts/dzVents/scripts/ideAlarm.lua https://github.com/xchwarze/ideAlarm/tree/master/scripts/ideAlarm.lua
 ~~~~
 

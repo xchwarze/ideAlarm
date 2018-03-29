@@ -15,7 +15,7 @@ Let's make a simple dzVents script just to see check that everything works. You
 can use Domoticz internal script editor or use an external script, it doesn't
 matter. Name it whatever you like.
 
-~~~~
+~~~~ lua
 return {
   active = true,
   logging = {

@@ -17,7 +17,7 @@ Requiring the ideAlarm module
 Normally you should require the ideAlarm module at the beginning of the execute
 function. Like this:
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
@@ -40,7 +40,7 @@ Presence Detected Auto Arming
 In case that your Domoticz system have presence detection, e.g. knows when/if someone
 is at home, you could make a script for auto arming:
 
-~~~~
+~~~~ lua
 return {
   active = true,
   },
@@ -67,7 +67,7 @@ Test Alerts Regularly
 It's a very good practice to regularly check that your sirens works. You can easily
 make a script for taking care of that routine:
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
@@ -92,7 +92,7 @@ at the top of the script file (instead of requiring it in the execute function).
 so will probably require a little bit more processing time from the machine running
 Domoticz, so avoid it if possible and you will save a couple of 1/100 parts of a second.
 
-~~~~
+~~~~ lua
 local alarm = require "ideAlarmModule"
 
 return {
@@ -123,7 +123,7 @@ Auto Arm Home at Sunset and Auto Disarm at Sunrise
 
 (This is probably not a good idea, but for the sake of the example, here it goes!)
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
@@ -155,7 +155,7 @@ There might be occasions when you have no time to think and fast need to disarm
 all zones. This will also fast and effectively turn off any sirens because the
 alarm zones states also will change to "Normal" when the arming mode changes.
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
@@ -187,7 +187,7 @@ If you have several alarm zones you can synchronize the arming mode between them
 In the example below we synchronize the arming mode for 'Another Zone' with the
 arming mode for 'My Home':
 
-~~~~
+~~~~ lua
 local alarm = require "ideAlarmModule"
 
 return {

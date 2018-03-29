@@ -36,7 +36,7 @@ Interval for how often ideAlarm shall nag you about doors etc that you've forgot
 You can specify a specific logging level for ideAlarm hence overriding the dzVents default
 logging level. Below is an example.
 
-~~~~
+~~~~ lua
 _C.loggingLevel = function(domoticz)
   return domoticz.LOG_INFO -- Select one of LOG_DEBUG, LOG_INFO, LOG_ERROR, LOG_FORCE to override system log level
 end
@@ -53,7 +53,7 @@ The benefit of having multiple alarm zones is that you can arm them differently.
 
 Below is an example of an alarm zone. (It's not the complete configuration file)
 
-~~~~
+~~~~ lua
 {
   name='My Home',
   armingModeTextDevID=550,

@@ -38,7 +38,7 @@ The *alarmZone* argument is the alarm zone object.
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmZoneNormal = function(domoticz, alarmZone)
   if alarmZone.name == 'My Home' then
     domoticz.devices('Alarm Indicator Light').switchOff()
@@ -59,7 +59,7 @@ zone object.
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmZoneArming = function(domoticz, alarmZone)
   domoticz.notify('Zone will be armed',
     'The alarm zone ' .. alarmZone.name .. ' will be armed in '..alarmZone.exitDelay.. ' seconds.',
@@ -77,7 +77,7 @@ The *alarmZone* argument is the alarm zone object.
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmZoneTripped = function(domoticz, alarmZone)
   -- A sensor has been tripped but there is still no alert
   -- We should inform whoever tripped the sensor so he/she can disarm the alarm
@@ -103,7 +103,7 @@ The *alarmZone* argument is the alarm zone object.
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmZoneError = function(domoticz, alarmZone)
   -- An error occurred for an alarm zone. Maybe a door was open when we tried to
   -- arm the zone. Anyway we should do something about it.
@@ -128,7 +128,7 @@ in the configuration file.
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmZoneAlert = function(domoticz, alarmZone, testMode)
   -- It's ALERT TIME!
   local msg = 'Intrusion detected in zone '..alarmZone.name..'. '
@@ -156,7 +156,7 @@ The *alarmZone* argument is the alarm zone object.
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmArmingModeChanged = function(domoticz, alarmZone)
   -- The arming mode for a zone has changed. We might want to be informed about that.
   local zoneName = alarmZone.name
@@ -182,7 +182,7 @@ arming will proceed. However, if *canArmWithOpenSensors* hasn't been set, the
 
 Example script:
 
-~~~~
+~~~~ lua
 alarmZoneArmingWithTrippedSensors = function(domoticz, alarmZone, armingMode)
   -- Active sensors have been detected when arming.
   local msg = ''
@@ -215,7 +215,7 @@ The *lastValue* argument holds the number of previously nagged about sensors.
 
 Example script:
 
-~~~~
+~~~~ lua
   alarmNagOpenSensors = function(domoticz, alarmZone, nagSensors, lastValue)
     if alarmZone.name == 'My home' then
       if #nagSensors == 0 and lastValue > 0 then
@@ -246,7 +246,7 @@ The *alarmZones* argument is a table holding all alarm zone objects.
 
 Example script:
 
-~~~~
+~~~~ lua
   alarmOpenSensorsAllZones = function(domoticz, alarmZones)
     -- Toggle the big red lamp if there are any open sensors in 'My House'
     for _, alarmZone in ipairs(alarmZones) do

@@ -27,7 +27,7 @@ Below are two sample dzVent scripts.
 
 A simple dzVents script:
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
@@ -53,7 +53,7 @@ if you just use a lighting switch beside the entrance door for arming and disarm
 Security through obscurity. In the example below, that physical button device
 is named 'Spider-Pig Button'.
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
