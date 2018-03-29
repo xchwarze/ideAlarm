@@ -16,14 +16,14 @@ Preparations
 Before you can use ideAlarm API in a dzVents script you need to require the ideAlarm
 module by inserting a single line of code that you find below.
 
-~~~~
+~~~~ lua
 local alarm = require "ideAlarmModule"
 ~~~~
 
 Just insert the code at the beginning of the execute function in your dzVents script,
 like in this example:
 
-~~~~
+~~~~ lua
 return {
   active = true,
   on = {
@@ -53,14 +53,15 @@ The Alarm Object
 The alarm object holds all information about ideAlarm. It provides global attributes
 and methods to query and manipulate your ideAlarm system.
 
-alarm.statusAll(domoticz)
-  Lists all defined alarm zones and sensors. It includes the arming mode and alarm status for all your defined alarm zones
-  Parameter
-      domoticz: (table) The domoticz object.
-  Return value
-      (string) A formatted alarm zone and sensors listing.
-  Usage example
-      domoticz.log(alarm.statusAll(domoticz), domoticz.LOG_INFO)
++ *alarm.statusAll(domoticz)*
+    + Lists all defined alarm zones and sensors. It includes the arming mode and alarm status for all your defined alarm zones
+    + Parameter
+        + domoticz: (table) The domoticz object.
+    + Return value
+        + (string) A formatted alarm zone and sensors listing.
+    + Usage example
+        + domoticz.log(alarm.statusAll(domoticz), domoticz.LOG_INFO)
+
 alarm.testAlert(domoticz)
   Turns on all your zones defined alert devices for 5 seconds. To use this function, ALARM_TEST_MODE must be set to false, otherwise an error is logged. You may schedule this function to run on a monthly basis preferably at night time.
   Parameter
